@@ -18,4 +18,5 @@ from. import views
 
 
 urlpatterns = [
+    path('<int:post_id>/', views.post_detail),
     path('', views.PostList.as_view()), ]

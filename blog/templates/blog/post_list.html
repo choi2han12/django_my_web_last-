@@ -2,6 +2,8 @@
 {% load static %}
 <html lang="KO">
 <head>
+    <title>컴퓨터-수업공부</title>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -10,7 +12,7 @@
 </head>
 <body>
 
-<div class="navbar navbar-expand-lg fixed-top navbar-dark bg-primary">
+<div class="navbar navbar-expand-lg fixed-top navbar-dark bg-primary", id="navbar">
     <div class="container">
         <a href="../" class="navbar-brand">English-HomeWork</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
@@ -73,14 +75,16 @@
 
     <div class="row">
 
-        <!-- Blog Entries Column -->
+
+
         <div class="col-md-8">
+
+            {%if object_list.exists %}
+            {% for p in object_list %}
 
             <h1 class="my-4">BLOG </h1>
 
 
-
-            {% for p in object_list %}
             <div class="card mb-4">
                 {%if p.head_image%}
                 <img class="card-img-top" src="{{p.head_image.url}}" alt="Card image cap">
@@ -96,8 +100,17 @@
                     Posted {{p.created}} by
                     <a href="#">{{p.author}}</a>
                 </div>
+
             </div>
-            {% endfor%}
+            {% endfor %}
+            {% else %}
+            <h3>                     </h3>
+            <h3>                      </h3>
+            <h3>아직 게시물이 없습니다</h3>
+
+            {% endif %}
+
+
 
 
         </div>
