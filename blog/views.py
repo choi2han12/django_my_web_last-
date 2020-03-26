@@ -18,8 +18,8 @@ class PostList(ListView):
         return context
 
 
-def post_detail(request, post_id):
-    blog_post = Post.objects.get(pk=post_id)
+def post_detail(request, pk):
+    blog_post = Post.objects.get(pk=pk)
 
     return render(
         request,
@@ -29,6 +29,69 @@ def post_detail(request, post_id):
 
         }
     )
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# class PostDetail(DetailView):
+#     model = Post
+#     #
+    # def post_detail(request, pk):
+    #     post = get_object_or_404(Post, pk=pk)
+    #     return render(request, 'blog/post_detail.html', {'post': post})
+    #
+    # def get_context_data(self, *, object_list=None, **kwargs):
+    #     context = super(PostDetail, self).get_context_data(**kwargs)
+    #     context['category_list'] = Category.objects.all()
+    #     context['uncategorized_posts'] = Post.objects.filter(category=None).count()
+    #
+    #     return context
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
