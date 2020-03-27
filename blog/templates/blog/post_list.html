@@ -16,7 +16,7 @@
         {% if p.category %}
         <span class="badge badge-primary float-right">{{p.category}}</span>
         {% else %}
-         <span class="badge badge-primary float-right">미분류</span>
+        <span class="badge badge-primary float-right">미분류</span>
         {% endif %}
         <h2 class="card-title">{{p.title}}</h2>
         <p class="card-text">{{p.content | truncatewords:50}}</p>
@@ -27,6 +27,8 @@
         <a href="#">{{p.author}}</a>
     </div>
 
+
+
 </div>
 {% endfor %}
 {% else %}
@@ -35,6 +37,7 @@
 <h3>아직 게시물이 없습니다</h3>
 
 {% endif %}
+
+
+
 {% endblock %}
-
-
